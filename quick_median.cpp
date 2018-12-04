@@ -3,8 +3,9 @@
 #include <algorithm>
 
 /*
- * Simple CPP implementation to calculate median
- * returning a double from a double vector
+ * Simple C++ implementation to calculate the median
+ * taking a numeric vector eturning a numeric value
+ * of the given type
  * This code is based on the Welford's method
  */
  template<typename T,
