@@ -1,9 +1,15 @@
-/* 
+#include <type_traits>
+#include <vector>
+#include <algorithm>
+
+/*
  * Simple CPP implementation to calculate median
  * returning a double from a double vector
  * This code is based on the Welford's method
  */
-double quick_median(vector<double> &v)
+ template<typename T,
+          typename = typename std::enable_if<std::is_arithmetic<T>::value, T>::type>
+T quick_median(std::vector<T> &v)
 {
         int v_size = v.size();
         // No elements
@@ -17,7 +23,7 @@ double quick_median(vector<double> &v)
                 return ((v[0] + v[1]) / 2);
         } else {
                 int half;
-                sort(v.begin(), v.end());
+                std::sort(v.begin(), v.end());
                 // Check if number of elements is odd or even
                 if ((v_size % 2) == 0) {  //Even
                         half = (v_size / 2) - 1;
@@ -29,4 +35,3 @@ double quick_median(vector<double> &v)
         }
 
 }
-
