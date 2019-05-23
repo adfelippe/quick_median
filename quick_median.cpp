@@ -5,8 +5,7 @@
 /*
  * Simple C++ implementation to calculate the median
  * taking a numeric vector eturning a numeric value
- * of the given type
- * This code is based on the Welford's method
+ * of the given type very fast
  */
  template<typename T,
           typename = typename std::enable_if<std::is_arithmetic<T>::value, T>::type>
